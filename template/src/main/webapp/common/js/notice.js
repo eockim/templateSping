@@ -14,10 +14,10 @@ angular.module('notice', [])
 
 		$scope.insert = function(regiForm){
 			console.log(regiForm.title);
-			$http.post("/template/notice/insert", regiForm)
+			$http.post("/template/notice/create", regiForm)
 				.success(function(data, status, headers, config){
-
 					alert(status);	
+					$scope.regiForm= {};
 				}).
 				error(function(data, status,headers, config){
 					alert(data);	

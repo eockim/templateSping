@@ -34,8 +34,11 @@ public class NoticeController {
 		logger.info("##insert notice##");
 		logger.info("noticeVO : " + noticeVo.getText());
 		//noticeService.insertNoticeData(new NoticeVO());
-		NoticeVO notice = new NoticeVO();;
+		NoticeVO notice = new NoticeVO();
 		notice.setCreateDate("ddddd");
+		noticeVo.setNum(1);
+		noticeService.insertNotice(noticeVo);
+		
 		return notice;
 	}
 	

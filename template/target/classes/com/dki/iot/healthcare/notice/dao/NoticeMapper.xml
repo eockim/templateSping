@@ -56,8 +56,8 @@
             mdf_per_id, 
             mdf_datm
             )
-    VALUES (?,
-    				?,
+    VALUES (nextval('gateway.tbr_app_notice_noti_serno_seq'),
+    				currval('gateway.tbr_app_notice_noti_serno_seq'),
     				#{title},
     				#{text},
     				#{html},
