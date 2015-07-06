@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>health</title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap-2.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap-2.3.2/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/jquery-ui-1.10.3/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/jquery.jqGrid-4.5.2/css/ui.jqgrid.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/gwmain.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/common.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/base.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/select2/select2.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/kt/build/css/kt3m-ui.css">
+
+	<script src="resources/vendor/jquery-1.9.1/jquery-1.9.1.min.js"></script>
+	<script src="resources/vendor/jquery-ui-1.10.3/ui/minified/jquery-ui.min.js"></script>
+	<script src="resources/vendor/jquery-ui-1.10.3/ui/i18n/jquery.ui.datepicker-ko.js"></script>
+	<script src="resources/vendor/select2/select2.js"></script>
+	<script src="resources/vendor/select2/select2_locale_ko.js"></script>
+	<script src="resources/vendor/angular/angular.js"></script>
+	<script src="resources/vendor/angular-1.2.18/angular.js"></script>
+	<script src="resources/vendor/underscore/underscore-min.js"></script>
+	<script src="resources/vendor/jquery.jqGrid-4.5.2/js/jquery.jqGrid.min.js"></script>
+	<script src="resources/vendor/jquery.jqGrid-4.5.2/js/i18n/grid.locale-en.js"></script>		
+	<script src="resources/vendor/customui/jquery.collapse.js"></script>
+	<script src="resources/vendor/customui/lnb.js"></script>	
+	<script src="resources/vendor/kt/build/kt3m-ui.js"></script>
+
+	<!--<script src="</resources/GWCA_LOCALE_${langCd}.js' />"></script>-->
+
+	<!--<script src="resources/js/ca/ui/commSvc.js"></script>-->
+</head>
+<body>
+	<div class="span2"></div>
+	<div class="span1- clearfix">
+		<div class="history"> menu history </div>
+		<div class="title-area clearfix"> 공지사항 등록 </div>
+		<div class="contents clearfix ng-scope">
+			<div class="search-area mb20"> 
+				<form class="form-inline" id="insertForm">
+					<fieldset>
+						<legend class="hidden"> </legend>
+						<label for="a1" class="w95">
+							글 제목
+						</label>
+						<input type="text" id="a1" class="ml10 mr20" style="width:200px" name="searchKeyWord" ng-model="searchInfo.KeyWord"/> <br />
+						<label for="a2" class="w95">
+						 글 내용
+						</label>
+						<textarea rows="15" id="a2" class="ml10 mr20" style="width:200px" name="searchKeyWord" ng-model="searchInfo.KeyWord"> 
+						</textarea><br />
+						<label for="a3" class="w95">
+							첨부파일
+						</label>
+						<input type="text" id="a1" class="ml10 mr20" style="width:200px" name="searchKeyWord" ng-model="searchInfo.KeyWord"/>
+
+
+
+					</fieldset>
+				</form>
+			</div>
+			<div class="btn-area clearfix">
+				<!--<button class="btn btn-red large" ng-show="cmd != 'read'"  ng-click="submit(commnAgentDetail)">저장</button>-->
+				<button class="btn btn-red large" ng-show="cmd != 'read'"  ng-click="submit(commnAgentDetail)">저장</button>
+				<!--<button class="btn btn-gray-bold large" type="button" ng-click="goUrl()">뒤로가기</button>-->
+				<button class="btn btn-gray-bold large" type="button" ng-click="goUrl()">뒤로가기</button>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

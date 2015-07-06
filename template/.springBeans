@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.6.3.201411271034-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/resources/application/context-common.xml</config>
+		<config>src/main/resources/application/context-datasource.xml</config>
+		<config>src/main/resources/application/context-sqlmap.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/mvc-config.xml</config>
+	</autoconfigs>
+	<configSets>
+		<configSet>
+			<name><![CDATA[Config Set]]></name>
+			<allowBeanDefinitionOverriding>true</allowBeanDefinitionOverriding>
+			<incomplete>false</incomplete>
+			<configs>
+				<config>src/main/resources/application/context-common.xml</config>
+				<config>src/main/resources/application/context-datasource.xml</config>
+				<config>src/main/resources/application/context-sqlmap.xml</config>
+				<config>src/main/webapp/WEB-INF/mvc-config.xml</config>
+			</configs>
+			<profiles>
+			</profiles>
+		</configSet>
+	</configSets>
+</beansProjectDescription>

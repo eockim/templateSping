@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dki.iot.healthcare.notice.dao.NoticeMapper">
+	
+	<resultMap id="noticeResultMap" type="noticeVo">
+	  <id property="serial" column=" noti_serno" />
+	  <result property="num" column="no"/>
+	  <result property="title" column="title"/>
+	  <result property="text" column="cont_text"/>
+	  <result property="html" column="cont_html"/>
+	  <result property="hasReply" column="reply_yn" />
+	  <result property="sort" column="sort"/>
+	  <result property="hits" column="hits"/>
+	  <result property="usage" column="use_yn"/>
+	  <result property="fileId" column="file_id"/>
+	  <result property="noticeStart" column="noti_strt_datm"/>
+	  <result property="noticeEnd" column="noti_end_datm"/>
+	  <result property="hasPopup" column="popup_yn"/>
+	  <result property="popStart" column="popup_strt_datm"/>
+	  <result property="popEnd" column="popup_end_datm"/>
+	  <result property="createId" column="cre_per_id"/>
+	  <result property="createDate" column="cre_datm"/>
+	  <result property="modifyId" column="mdf_per_id"/>
+	  <result property="modifyDate" column="mdf_datm"/>
+	</resultMap>
+	
+	<select id="selectAllUserData" parameterType="noticeVo" resultMap="noticeResultMap">
+		SELECT 
+			noti_serno, no, title, cont_text, cont_html, reply_yn, sort, 
+      hits, use_yn, file_id, noti_strt_datm, noti_end_datm, popup_yn, 
+      popup_strt_datm, popup_end_datm, cre_per_id, cre_datm, mdf_per_id, 
+      mdf_datm
+		FROM gateway.tbr_app_notice
+	</select>
+	
+	<insert id="insertNotice" parameterType="noticeVo">
+		INSERT INTO gateway.tbr_app_notice(
+            noti_serno,
+            no,
+            title,
+            cont_text,
+            cont_html,
+            reply_yn,
+            sort, 
+            hits,
+            use_yn,
+            file_id,
+            noti_strt_datm,
+            noti_end_datm,
+            popup_yn, 
+            popup_strt_datm,
+            popup_end_datm,
+            cre_per_id,
+            cre_datm,
+            mdf_per_id, 
+            mdf_datm
+            )
+    VALUES (?,
+    				?,
+    				#{title},
+    				#{text},
+    				#{html},
+    				#{hasReply},
+    				#{sort},
+    				#{hits},
+    				#{usage}, 
+            #{fileId},
+            #{noticeStart},
+            #{noticeEnd},
+            #{hasPopup},
+            #{popStart},
+            #{popEnd}, 
+            #{createId},
+            #{createDate},
+            #{modifyId},
+            #{modifyDate}
+    )
+	</insert>
+</mapper>
+
