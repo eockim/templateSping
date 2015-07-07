@@ -1,7 +1,12 @@
 package com.dki.iot.healthcare.notice.web;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import javax.annotation.Resource;
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -33,7 +38,7 @@ public class NoticeController {
 		
 		logger.info("##insert notice##");
 		logger.info("noticeVO : " + noticeVo.getText());
-		//noticeService.insertNoticeData(new NoticeVO());
+
 		NoticeVO notice = new NoticeVO();
 		notice.setCreateDate("ddddd");
 		noticeVo.setNum(1);
@@ -43,8 +48,18 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value="/read", method=RequestMethod.GET)
-	public @ResponseBody String selectAllNotice(@RequestBody NoticeVO noticeVo){
-		return "";
+	public @ResponseBody List<HashMap<String, String>> selectAllNotice(){
+		
+		logger.info("###/read all notice data###");
+		
+		List<HashMap<String, String>> notice = new ArrayList < HashMap<String, String>>();
+		notice = noticeService.selectAllNotice();
+		
+		ObjectMapper mapper = new ObjectMapper();
+
+		logger.info("###notice data ###" + notice);
+		logger.info("###notice data ###" + notice.get(1).get("title"));
+		return notice;
 	}
 	
 	@RequestMapping(value="/read/{noticeId}", method=RequestMethod.GET)

@@ -25,12 +25,27 @@
 	  <result property="modifyDate" column="mdf_datm"/>
 	</resultMap>
 	
-	<select id="selectAllUserData" parameterType="noticeVo" resultMap="noticeResultMap">
+	<select id="selectAllNotice" resultType="hashmap">
 		SELECT 
-			noti_serno, no, title, cont_text, cont_html, reply_yn, sort, 
-      hits, use_yn, file_id, noti_strt_datm, noti_end_datm, popup_yn, 
-      popup_strt_datm, popup_end_datm, cre_per_id, cre_datm, mdf_per_id, 
-      mdf_datm
+			noti_serno AS serial,
+			no AS num,
+			title AS title,
+			cont_text AS text,
+			cont_html AS html,
+			reply_yn AS hasReply,
+			sort AS sort,
+			hits AS hits,
+			use_yn AS usage,
+			file_id AS fileId,
+			noti_strt_datm AS noticeStart,
+			noti_end_datm AS noticeEnd,
+			popup_yn AS hasPopup,
+			popup_strt_datm AS popStart,
+			popup_end_datm AS popEnd,
+			cre_per_id AS createId,
+			cre_datm AS createDate,
+			mdf_per_id AS modifyId, 
+      mdf_datm AS modifyDate
 		FROM gateway.tbr_app_notice
 	</select>
 	

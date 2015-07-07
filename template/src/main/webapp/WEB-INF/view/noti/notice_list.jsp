@@ -145,11 +145,11 @@
 							datatype : 'local',
 							colNames : ['번호', '제목', '작성자', '작성일', '조회수'],
 							colModel : [
-								{ name : 'index', index: 'index',        width:40,  align:'center'},
-								{ name : 'name', index : 'name',       width:80,  align:'left'  },
-								{ name : 'id', index: 'id',        width:80,  align:'left'  },
-								{ name : 'date', index: 'date',        width:80,  align:'right' }, 
-								{ name : 'count', index: 'count',  width:50,  align:'right' } 
+								{ name : 'serial', index: 'serial',        width:40,  align:'center'},
+								{ name : 'title', index : 'title',       width:80,  align:'left'  },
+								{ name : 'createId', index: 'createId',        width:80,  align:'left'  },
+								{ name : 'createDate', index: 'createDate',        width:80,  align:'right' }, 
+								{ name : 'hits', index: 'hits',  width:50,  align:'right' } 
 								],
 							pager : '#pager',
 							rowNum : '10',
